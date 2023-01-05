@@ -29,7 +29,7 @@ function Cuisine() {
                 <div key={recipe.id} >
                     <Link to={`/recipe/${recipe.id}`}>
                         <img src={recipe.image} alt={recipe.title} className="rounded-lg w-full" />
-                        <h4 className="text-center p-2 font-medium">{recipe.title}</h4>
+                        <h4 className="text-center p-2 font-semibold">{recipe.title}</h4>
                     </Link>
                 </div>
             )

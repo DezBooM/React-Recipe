@@ -19,7 +19,7 @@ function Search() {
             type="text" 
             value={search} 
             onChange={e => setSearch(e.target.value)}
-            className="border-none rounded-lg outline-none relative bg-gradient-to-b from-gray-500 to-gray-700 px-7 py-2 w-1/2 text-white focus:bg-gradient-to-b focus:from-green-700 focus:to-green-900"/>
+            className="mr-4 md:mr-0 border-none rounded-lg outline-none relative bg-gradient-to-b from-gray-500 to-gray-700 px-7 py-2 w-full md:w-1/2 text-white focus:bg-gradient-to-b focus:from-green-700 focus:to-green-900"/>
     </form>
   )
 }
