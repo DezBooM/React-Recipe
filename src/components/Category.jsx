@@ -2,13 +2,13 @@ import {FaHamburger, FaPizzaSlice} from "react-icons/fa"
 import {GiChopsticks, GiNoodles} from "react-icons/gi"
 import { NavLink } from "react-router-dom"
 
-function Category() {
+const styleBg = "rounded-full flex flex-col justify-center items-center w-24 h-24 cursor-pointer bg-gradient-to-b from-gray-500 to-gray-700 no-underline transfrom scale-[0.8] current:bg-gradient-to-b current:from-green-700 current:to-green-900"
+const styleH4 = "text-white text-sm"
+const StyleIcon = "fill-white text-3xl"
 
-  const styleBg = "rounded-[50%] flex flex-col justify-center items-center w-24 h-24 cursor-pointer bg-gradient-to-b from-gray-500 to-gray-700 no-underline transfrom scale-[0.8] current:bg-gradient-to-b current:from-green-700 current:to-green-900"
-  const styleH4 = "text-white text-sm"
-  const StyleIcon = "fill-white text-2xl"
+function Category() {
   return (
-    <div className="flex justify-center mx-8">
+    <div className="flex justify-center">
       <NavLink to={"/cuisine/italian"} className={styleBg}>
         <FaPizzaSlice className={StyleIcon} />
         <h4 className={styleH4}>Italian</h4>

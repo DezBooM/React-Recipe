@@ -5,14 +5,10 @@ import { Link, useParams } from "react-router-dom"
 function Cuisine() {
 
     const [cuisine, setCuisine] = useState([])
-
     const params = useParams()
 
     const getCuisine = async name => {
-        const api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${import.meta.env.VITE_API_KEY}&cuisine=${name}`)
-        if (!api.ok) {
-            throw new Error(`Reached limit :(`)
-          }
+        const api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${import.meta.env.VITE_API_KEY}&number=12&cuisine=${name}`)
         const data = await api.json()
         setCuisine(data.results)
     }
@@ -24,16 +20,23 @@ function Cuisine() {
     const cuisineEl = cuisine.map(recipe => {
         return (
             <div key={recipe.id} >
-                <img src={recipe.image} alt={recipe.title} className="rounded-lg w-full" />
-                <h4 className="text-center p-2 font-medium">{recipe.title}</h4>
+                <Link to={`/recipe/${recipe.id}`}>
+                    <img src={recipe.image} alt={recipe.title} className="rounded-lg w-full" />
+                    <h4 className="text-center p-2 font-medium">{recipe.title}</h4>
+                </Link>
             </div>
         )
     })
 
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,_minmax(20rem,_1fr))] gap-12">
+    <motion.div
+    animate={{opacity:1}}
+    initial={{opacity:0}}
+    exit={{opacity:0}}
+    transition={{duration:0.5}}
+    className="grid grid-cols-[repeat(auto-fit,_minmax(15rem,_1fr))] gap-12">
         {cuisineEl}
-    </div>
+    </motion.div>
   )
 }
 

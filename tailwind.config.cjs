@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        passion: ['"Passions Conflict"']
+      }
+    }
   },
   plugins: [
     require('tailwindcss-current'),
