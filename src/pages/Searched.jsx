@@ -17,7 +17,9 @@ function Searched() {
         getSearched(params.search).catch(err => console.log(err))
     }, [params.search])
 
-    const searchedEl = searched.map(recipe => {
+  return (
+    <div className="grid grid-cols-[repeat(auto-fit,_minmax(15rem,_1fr))] gap-12">
+        {searched.map(recipe => {
         return (
             <div key={recipe.id} >
                 <Link to={`/recipe/${recipe.id}`}>
@@ -27,11 +29,7 @@ function Searched() {
                 
             </div>
         )
-    })
-
-  return (
-    <div className="grid grid-cols-[repeat(auto-fit,_minmax(15rem,_1fr))] gap-12">
-        {searchedEl}
+    })}
     </div>
   )
 }

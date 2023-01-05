@@ -17,17 +17,6 @@ function Cuisine() {
         getCuisine(params.type).catch(err => console.log(err))
     }, [params.type])
 
-    const cuisineEl = cuisine.map(recipe => {
-        return (
-            <div key={recipe.id} >
-                <Link to={`/recipe/${recipe.id}`}>
-                    <img src={recipe.image} alt={recipe.title} className="rounded-lg w-full" />
-                    <h4 className="text-center p-2 font-medium">{recipe.title}</h4>
-                </Link>
-            </div>
-        )
-    })
-
   return (
     <motion.div
     animate={{opacity:1}}
@@ -35,7 +24,16 @@ function Cuisine() {
     exit={{opacity:0}}
     transition={{duration:0.5}}
     className="grid grid-cols-[repeat(auto-fit,_minmax(15rem,_1fr))] gap-12">
-        {cuisineEl}
+        {cuisine.map(recipe => {
+            return (
+                <div key={recipe.id} >
+                    <Link to={`/recipe/${recipe.id}`}>
+                        <img src={recipe.image} alt={recipe.title} className="rounded-lg w-full" />
+                        <h4 className="text-center p-2 font-medium">{recipe.title}</h4>
+                    </Link>
+                </div>
+            )
+        })}
     </motion.div>
   )
 }
