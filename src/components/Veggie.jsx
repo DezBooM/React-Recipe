@@ -50,7 +50,7 @@ function Veggie() {
             <SplideSlide key={recipe.id}>
               <div className="h-64 mb-4 overflow-hidden rounded-lg group relative">
                 <Link to={`/recipe/${recipe.id}`}>
-                  <p className="transform -translate-x-1/2  absolute z-10 h-2/5 left-1/2 bottom-0 text-white w-full text-center font-semibold text-base flex justify-center items-center group-hover:drop-shadow-2xl">
+                  <p className="transform -translate-x-1/2  absolute z-10 h-2/5 left-1/2 bottom-0 text-white w-full text-center font-semibold text-base flex justify-center items-center group-hover:drop-shadow-[0_0_2px_#000000]">
                     {recipe.title}
                   </p>
                   <img
